@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:graduation_project/modules/search_screen/cubit/search_cubit.dart';
 
-
 import '../../widgets/reusable_components.dart';
 import '../BooksScreen/book_details_screen.dart';
 import 'cubit/search_states.dart';
@@ -41,7 +40,7 @@ class SearchScreen extends StatelessWidget {
                   inputType: TextInputType.text,
                   label: 'Search',
                   filledColor: const Color.fromARGB(253, 220, 252, 231),
-                  onSubmit: (dynamic value){
+                  onSubmit: (dynamic value) {
                     SearchCubit.get(context).getSearchData(value);
                   },
                   // onChange: (dynamic value) {

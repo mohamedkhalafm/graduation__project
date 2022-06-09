@@ -11,6 +11,7 @@ import 'package:graduation_project/network/local_network/Cache_Helper.dart';
 import 'package:graduation_project/widgets/fade_animation.dart';
 
 import '../../widgets/reusable_components.dart';
+import '../ForgotPassword/forgotPassword_Screen.dart';
 
 
 class LoginScreen extends StatefulWidget {
@@ -162,18 +163,20 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
-                                    children: const [
-                                      // TextButton(
-                                      //   onPressed: () {},
-                                      //   child: Text('Forget Password? ',
-                                      //       style: Theme.of(context)
-                                      //           .textTheme
-                                      //           .subtitle1!
-                                      //           .copyWith(
-                                      //               fontSize: 15,
-                                      //               fontWeight:
-                                      //                   FontWeight.bold)),
-                                      // ),
+                                    children:  [
+                                      TextButton(
+                                        onPressed: () {
+                                          navigateTo(context, ForgotPassword());
+                                        },
+                                        child: Text('Forget Password? ',
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .subtitle1!
+                                                .copyWith(
+                                                    fontSize: 15,
+                                                    fontWeight:
+                                                        FontWeight.bold)),
+                                      ),
                                     ],
                                   ),
                                   const SizedBox(

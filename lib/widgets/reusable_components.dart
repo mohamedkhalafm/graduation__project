@@ -8,7 +8,7 @@ Widget defaultButton(
         {required void Function()? function(),
         required String text,
         required BuildContext context,
-        double width = 170}) =>
+        double width = 250}) =>
     Container(
         decoration: BoxDecoration(
             color: thirdColor,

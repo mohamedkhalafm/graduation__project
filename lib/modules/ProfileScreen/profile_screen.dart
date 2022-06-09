@@ -21,22 +21,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
   final emailController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   setState(() {
-  //     nameController.text = userName!;
-  //     emailController.text = userEmail!;
-  //   });
-  // }
-
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ProfileCubit, ProfileStates>(
       listener: (context, state) {},
       builder: (context, state) {
         //
-        // var model = ProfileCubit.get(context).userProfile;
+
         if (ProfileCubit.get(context).name == null &&
             ProfileCubit.get(context).email == null) {
         } else {
@@ -116,49 +107,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       children: <Widget>[
                         Row(
                           children: <Widget>[
-                            // FlatButton(
-                            //   shape: RoundedRectangleBorder(
-                            //     borderRadius: BorderRadius.circular(7.0),
-                            //   ),
-                            //   color: secondColor,
-                            //   onPressed: () {},
-                            //   child: const Text(
-                            //     'Edit Profile',
-                            //     style: TextStyle(
-                            //         fontWeight: FontWeight.bold,
-                            //         fontSize: 15.0,
-                            //         color: Colors.white),
-                            //   ),
-                            // ),
-                            const SizedBox(width: 5.0),
-                            // FlatButton(
-                            //   shape: RoundedRectangleBorder(
-                            //     borderRadius: BorderRadius.circular(7.0),
-                            //   ),
-                            //   color: Colors.grey,
-                            //   onPressed: () {
-                            //     CacheHelper.removeData(
-                            //       key: 'token',
-                            //     ).then((value) {
-                            //       // if (value) {
-                            //       //   CacheHelper.removeData(key: 'myToken')
-                            //       //       .then((value) {});
-                            //         navigateToAndBurn(
-                            //           context,
-                            //           const LoginScreen(),
-                            //         );
-                            //       }
-                            //    // }
-                            //     );
-                            //   },
-                            //   child: const Text(
-                            //     'Logout',
-                            //     style: TextStyle(
-                            //         fontWeight: FontWeight.bold,
-                            //         fontSize: 15.0,
-                            //         color: Colors.white),
-                            //   ),
-                            // )
+                            ElevatedButton(
+                              onPressed: () {
+                                CacheHelper.removeData(
+                                  key: 'token',
+                                ).then((value) {
+                                  navigateToAndBurn(
+                                    context,
+                                    const LoginScreen(),
+                                  );
+                                });
+                              },
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.grey,
+                                textStyle: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15.0,
+                                    color: Colors.white),
+                              ),
+                              child: Text(
+                                'Logout',
+                              ),
+                            )
                           ],
                         )
                       ],

@@ -53,7 +53,7 @@ class SearchCubit extends Cubit<SearchStates> {
 
 
   SearchModel? searchModel;
-  //List allItems =[] ;
+  List allItems =[] ;
   void getSearchData(
     String name , 
  //dynamic year
@@ -67,6 +67,7 @@ class SearchCubit extends Cubit<SearchStates> {
       // allItems = [
       //      searchModel!.data,
       //    ];
+      //allItems = searchModel!.data![0].contains(name.toString());
          print(searchModel!.data![0].name.toString());
          print(searchModel!.data.toString());
       emit(SearchSuccessState());

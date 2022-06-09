@@ -22,4 +22,6 @@ const ANSWERS = 'exam/answer';
 const LOGIN = 'auth/login';
 // ignore: constant_identifier_names
 const PROFILE = 'auth/profile';
+// ignore: constant_identifier_names
+const FORGOTPASSWORD = 'forgotPassword';
 
